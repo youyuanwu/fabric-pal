@@ -136,15 +136,16 @@ typedef enum tagEFaultRepRetVal
 #ifndef RC_INVOKED
 
 #include "pal.h"
+#include <string.h>
 
 #ifndef PAL_STDCPP_COMPAT
 #ifdef __cplusplus
 #ifndef __PLACEMENT_NEW_INLINE
 #define __PLACEMENT_NEW_INLINE
-inline void *__cdecl operator new(size_t, void *_P)
-{
-    return (_P);
-}
+// inline void *__cdecl operator new(size_t, void *_P)
+// {
+//     return (_P);
+// }
 #endif // __PLACEMENT_NEW_INLINE
 #endif // __cplusplus
 #endif // !PAL_STDCPP_COMPAT
@@ -1614,8 +1615,8 @@ typedef struct tagVS_FIXEDFILEINFO
 /******************** external includes *************************/
 
 #ifndef PAL_STDCPP_COMPAT
-#include "cpp/ccombstr.h"
-#include "cpp/cstring.h"
+//#include "cpp/ccombstr.h"
+//#include "cpp/cstring.h"
 #endif // !PAL_STDCPP_COMPAT
 
 #endif // RC_INVOKED

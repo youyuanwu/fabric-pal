@@ -48,8 +48,8 @@ typedef void *PVOID64;
 
 // 256
 #if !defined(_NTSYSTEM_)
-#define NTSYSAPI     DECLSPEC_IMPORT
-#define NTSYSCALLAPI DECLSPEC_IMPORT
+//#define NTSYSAPI     DECLSPEC_IMPORT
+//#define NTSYSCALLAPI DECLSPEC_IMPORT
 #else
 #define NTSYSAPI
 #if defined(_NTDLLBUILD_)
@@ -59,8 +59,8 @@ typedef void *PVOID64;
 #endif
 #endif
 
-#define __TEXT(quote) L##quote      // r_winnt
-#define TEXT(quote) __TEXT(quote)   // r_winnt
+//#define __TEXT(quote) L##quote      // r_winnt
+//#define TEXT(quote) __TEXT(quote)   // r_winnt
 
 // 486
 typedef char CCHAR;

@@ -135,13 +135,13 @@ typedef _W64 unsigned int   uintptr_t;
 #define _UINTPTR_T_DEFINED
 #endif
 
-#define SAFECRT_DEPRECATED __declspec(deprecated)
+//#define SAFECRT_DEPRECATED __declspec(deprecated)
 
 /* errno_t */
 #if !defined(_ERRCODE_DEFINED)
 #define _ERRCODE_DEFINED
 /* errcode is deprecated in favor or errno_t, which is part of the standard proposal */
-SAFECRT_DEPRECATED typedef int errcode;
+//SAFECRT_DEPRECATED typedef int errcode;
 typedef int errno_t; /* standard */
 #endif
 

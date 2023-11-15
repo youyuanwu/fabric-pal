@@ -15,7 +15,7 @@ extern "C" {
 #define __drv_functionClass _Function_class_
 
 // 484
-#define _IRQL_requires_max_(irql)  /* see kernelspecs.h */
+//#define _IRQL_requires_max_(irql)  /* see kernelspecs.h */
 #define __drv_maxIRQL _IRQL_requires_max_ /* legacy */
 
 // 536

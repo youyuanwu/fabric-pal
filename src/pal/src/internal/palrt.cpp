@@ -5,6 +5,7 @@
 
 #include "palrt.h"
 #include <string>
+#include <wchar.h>
 
 using namespace std;
 

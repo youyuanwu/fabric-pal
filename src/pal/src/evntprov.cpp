@@ -4,7 +4,7 @@
 // ------------------------------------------------------------
 
 #include "evntprov.h"
-#include "retail/native/FabricCommon/TraceWrapper.Linux.h"
+//#include "retail/native/FabricCommon/TraceWrapper.Linux.h"
 
 ULONG
 EVNTAPI
@@ -84,17 +84,17 @@ EventWrite(
         dataPtr += UserData[i].Size;
     }
 
-    TraceWrapperBinaryStructured(
-        (unsigned char*) &serviceFabricProviderId,
-        (unsigned short) EventDescriptor->Id,
-        (unsigned char) EventDescriptor->Version,
-        (unsigned char) EventDescriptor->Channel,
-        (unsigned char) EventDescriptor->Level,
-        (unsigned char) EventDescriptor->Opcode,
-        (unsigned short) EventDescriptor->Task,
-        (unsigned long long) EventDescriptor->Keyword,
-        (unsigned char*) data,
-        (unsigned short) totalBytes);
+    // TraceWrapperBinaryStructured(
+    //     (unsigned char*) &serviceFabricProviderId,
+    //     (unsigned short) EventDescriptor->Id,
+    //     (unsigned char) EventDescriptor->Version,
+    //     (unsigned char) EventDescriptor->Channel,
+    //     (unsigned char) EventDescriptor->Level,
+    //     (unsigned char) EventDescriptor->Opcode,
+    //     (unsigned short) EventDescriptor->Task,
+    //     (unsigned long long) EventDescriptor->Keyword,
+    //     (unsigned char*) data,
+    //     (unsigned short) totalBytes);
 
     return 0;
 }

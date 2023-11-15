@@ -15,8 +15,10 @@ extern "C" {
 #define __RPCNDR_H_VERSION__
 #endif
 
+#ifndef DECLSPEC_NOVTABLE
 #define DECLSPEC_NOVTABLE __declspec(novtable)
-#define DECLSPEC_UUID(x) __declspec(uuid(x))
+#endif
+//#define DECLSPEC_UUID(x) __declspec(uuid(x))
 
 #define MIDL_INTERFACE(x)   struct DECLSPEC_UUID(x) DECLSPEC_NOVTABLE
 

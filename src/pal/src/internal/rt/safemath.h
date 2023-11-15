@@ -36,7 +36,8 @@
 #ifdef PAL_STDCPP_COMPAT
 #include <type_traits>
 #else
-#include "clr_std/type_traits"
+//#include "clr_std/type_traits"
+#include  <type_traits>
 #endif
 
 //==================================================================

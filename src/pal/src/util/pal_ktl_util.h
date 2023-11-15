@@ -15,4 +15,4 @@
     {\
         wargs[iter] = Utf8To16(cargs[iter]);\
         args[iter] = (WCHAR*)(wargs[iter].data());\
-    }\
+    }

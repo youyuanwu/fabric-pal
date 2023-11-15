@@ -38,6 +38,7 @@ Abstract:
 #define __PAL_H__
 
 #ifdef PAL_STDCPP_COMPAT
+#include <cstddef>
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -46,6 +47,10 @@ Abstract:
 #include <errno.h>
 #include <ctype.h>
 #endif
+// #ifndef _SIZE_T_DEFINED
+// #include <stddef.h>
+// #endif
+//#include <cstddef>
 
 #ifdef  __cplusplus
 extern "C" {
@@ -3438,29 +3443,29 @@ Return Values
 The function returns the initial value pointed to by Target. 
 
 --*/
-EXTERN_C
-PALIMPORT
-inline
-LONG
-PALAPI
-InterlockedExchange(
-    IN OUT LONG volatile *Target,
-    IN LONG Value)
-{
-    return __sync_swap(Target, Value);
-}
+// EXTERN_C
+// PALIMPORT
+// inline
+// LONG
+// PALAPI
+// InterlockedExchange(
+//     IN OUT LONG volatile *Target,
+//     IN LONG Value)
+// {
+//     return __sync_swap(Target, Value);
+// }
 
-EXTERN_C
-PALIMPORT
-inline
-LONGLONG
-PALAPI
-InterlockedExchange64(
-    IN OUT LONGLONG volatile *Target,
-    IN LONGLONG Value)
-{
-    return __sync_swap(Target, Value);
-}
+// EXTERN_C
+// PALIMPORT
+// inline
+// LONGLONG
+// PALAPI
+// InterlockedExchange64(
+//     IN OUT LONGLONG volatile *Target,
+//     IN LONGLONG Value)
+// {
+//     return __sync_swap(Target, Value);
+// }
 
 /*++
 Function:
@@ -4076,105 +4081,105 @@ SetThreadIdealProcessorEx(
    To avoid name collisions, those functions have been renamed using
    defines */
 #ifndef PAL_STDCPP_COMPAT
-#define exit          PAL_exit
-#define atexit        PAL_atexit
-#define printf        PAL_printf
-#define vprintf       PAL_vprintf
-#define wprintf       PAL_wprintf
-#define wcsspn        PAL_wcsspn
-#define wcstod        PAL_wcstod
-#define wcstol        PAL_wcstol
-#define wcstoul       PAL_wcstoul
-#define wcscat        PAL_wcscat
-#define wcscpy        PAL_wcscpy
-#define wcslen        PAL_wcslen
-#define wcsncmp       PAL_wcsncmp
-#define wcschr        PAL_wcschr
-#define wcsrchr       PAL_wcsrchr
-#define wcsstr        PAL_wcsstr
-#define swscanf       PAL_swscanf
-#define wcspbrk       PAL_wcspbrk
-#define wcscmp        PAL_wcscmp
-#define wcsncat       PAL_wcsncat
-#define wcsncpy       PAL_wcsncpy
-#define wcstok        PAL_wcstok
-#define wcscspn       PAL_wcscspn
-#define iswprint      PAL_iswprint
-#define iswalpha      PAL_iswalpha
-#define iswdigit      PAL_iswdigit
-#define iswspace      PAL_iswspace
-#define iswupper      PAL_iswupper
-#define iswxdigit     PAL_iswxdigit
-#define towlower      PAL_towlower
-#define towupper      PAL_towupper
-#define realloc       PAL_realloc
-#define fopen         PAL_fopen
-#define strtok        PAL_strtok
-#define strtoul       PAL_strtoul
-#define fprintf       PAL_fprintf
-#define fwprintf      PAL_fwprintf
-#define vfprintf      PAL_vfprintf
-#define vfwprintf     PAL_vfwprintf
-#define ctime         PAL_ctime
-#define localtime     PAL_localtime
-#define mktime        PAL_mktime
-#define rand          PAL_rand
-#define time          PAL_time
-#define getenv        PAL_getenv
-#define fgets         PAL_fgets
-#define fgetws        PAL_fgetws
-#define fputc         PAL_fputc
-#define putchar       PAL_putchar
-#define qsort         PAL_qsort
-#define bsearch       PAL_bsearch
-#define ferror        PAL_ferror
-#define fread         PAL_fread
-#define fwrite        PAL_fwrite
-#define feof          PAL_feof
-#define ftell         PAL_ftell
-#define fclose        PAL_fclose
-#define setbuf        PAL_setbuf
-#define fflush        PAL_fflush
-#define fputs         PAL_fputs
-#define fseek         PAL_fseek
-#define fgetpos       PAL_fgetpos
-#define fsetpos       PAL_fsetpos
-#define getc          PAL_getc
-#define fgetc         PAL_getc // not a typo
-#define ungetc        PAL_ungetc
-#define setvbuf       PAL_setvbuf
-#define atol          PAL_atol
-#define labs          PAL_labs
-#define acos          PAL_acos
-#define acosh         PAL_acosh
-#define asin          PAL_asin
-#define asinh         PAL_asinh
-#define atan2         PAL_atan2
-#define exp           PAL_exp
-#define log           PAL_log
-#define log10         PAL_log10
-#define pow           PAL_pow
-#define acosf         PAL_acosf
-#define acoshf        PAL_acoshf
-#define asinf         PAL_asinf
-#define asinhf        PAL_asinhf
-#define atan2f        PAL_atan2f
-#define expf          PAL_expf
-#define logf          PAL_logf
-#define log10f        PAL_log10f
-#define powf          PAL_powf
-#define malloc        PAL_malloc
-#define free          PAL_free
-#define mkstemp       PAL_mkstemp
-#define rename        PAL_rename
-#define _strdup       PAL__strdup
-#define _getcwd       PAL__getcwd
-#define _open         PAL__open
-#define _close        PAL__close
-#define _wcstoui64    PAL__wcstoui64
-#define _flushall     PAL__flushall
-#define strnlen       PAL_strnlen
-#define wcsnlen       PAL_wcsnlen
+// #define exit          PAL_exit
+// #define atexit        PAL_atexit
+// #define printf        PAL_printf
+// #define vprintf       PAL_vprintf
+// #define wprintf       PAL_wprintf
+// #define wcsspn        PAL_wcsspn
+// #define wcstod        PAL_wcstod
+// #define wcstol        PAL_wcstol
+// #define wcstoul       PAL_wcstoul
+// #define wcscat        PAL_wcscat
+// #define wcscpy        PAL_wcscpy
+// #define wcslen        PAL_wcslen
+// #define wcsncmp       PAL_wcsncmp
+// #define wcschr        PAL_wcschr
+// #define wcsrchr       PAL_wcsrchr
+// #define wcsstr        PAL_wcsstr
+// #define swscanf       PAL_swscanf
+// #define wcspbrk       PAL_wcspbrk
+// #define wcscmp        PAL_wcscmp
+// #define wcsncat       PAL_wcsncat
+// #define wcsncpy       PAL_wcsncpy
+// #define wcstok        PAL_wcstok
+// #define wcscspn       PAL_wcscspn
+// #define iswprint      PAL_iswprint
+// #define iswalpha      PAL_iswalpha
+// #define iswdigit      PAL_iswdigit
+// #define iswspace      PAL_iswspace
+// #define iswupper      PAL_iswupper
+// #define iswxdigit     PAL_iswxdigit
+// #define towlower      PAL_towlower
+// #define towupper      PAL_towupper
+// #define realloc       PAL_realloc
+// #define fopen         PAL_fopen
+// #define strtok        PAL_strtok
+// #define strtoul       PAL_strtoul
+// #define fprintf       PAL_fprintf
+// #define fwprintf      PAL_fwprintf
+// #define vfprintf      PAL_vfprintf
+// #define vfwprintf     PAL_vfwprintf
+// #define ctime         PAL_ctime
+// #define localtime     PAL_localtime
+// #define mktime        PAL_mktime
+// #define rand          PAL_rand
+// #define time          PAL_time
+// #define getenv        PAL_getenv
+// #define fgets         PAL_fgets
+// #define fgetws        PAL_fgetws
+// #define fputc         PAL_fputc
+// #define putchar       PAL_putchar
+// #define qsort         PAL_qsort
+// #define bsearch       PAL_bsearch
+// #define ferror        PAL_ferror
+// #define fread         PAL_fread
+// #define fwrite        PAL_fwrite
+// #define feof          PAL_feof
+// #define ftell         PAL_ftell
+// #define fclose        PAL_fclose
+// #define setbuf        PAL_setbuf
+// #define fflush        PAL_fflush
+// #define fputs         PAL_fputs
+// #define fseek         PAL_fseek
+// #define fgetpos       PAL_fgetpos
+// #define fsetpos       PAL_fsetpos
+// #define getc          PAL_getc
+// #define fgetc         PAL_getc // not a typo
+// #define ungetc        PAL_ungetc
+// #define setvbuf       PAL_setvbuf
+// #define atol          PAL_atol
+// #define labs          PAL_labs
+// #define acos          PAL_acos
+// #define acosh         PAL_acosh
+// #define asin          PAL_asin
+// #define asinh         PAL_asinh
+// #define atan2         PAL_atan2
+// #define exp           PAL_exp
+// #define log           PAL_log
+// #define log10         PAL_log10
+// #define pow           PAL_pow
+// #define acosf         PAL_acosf
+// #define acoshf        PAL_acoshf
+// #define asinf         PAL_asinf
+// #define asinhf        PAL_asinhf
+// #define atan2f        PAL_atan2f
+// #define expf          PAL_expf
+// #define logf          PAL_logf
+// #define log10f        PAL_log10f
+// #define powf          PAL_powf
+// #define malloc        PAL_malloc
+// #define free          PAL_free
+// #define mkstemp       PAL_mkstemp
+// #define rename        PAL_rename
+// #define _strdup       PAL__strdup
+// #define _getcwd       PAL__getcwd
+// #define _open         PAL__open
+// #define _close        PAL__close
+// #define _wcstoui64    PAL__wcstoui64
+// #define _flushall     PAL__flushall
+// #define strnlen       PAL_strnlen
+// #define wcsnlen       PAL_wcsnlen
 
 #ifdef _AMD64_ 
 #define _mm_getcsr    PAL__mm_getcsr
@@ -4223,49 +4228,50 @@ void *PAL_memcpy (void *dest, const void *src, size_t count);
 
 PALIMPORT void * __cdecl memcpy(void *, const void *, size_t);
 
-#define memcpy PAL_memcpy
-#define IS_PAL_memcpy 1
-#define TEST_PAL_DEFERRED(def) IS_##def
-#define IS_REDEFINED_IN_PAL(def) TEST_PAL_DEFERRED(def)
-#else //defined(_DEBUG)
-PALIMPORT void * __cdecl memcpy(void *, const void *, size_t);
-#endif //defined(_DEBUG)
-PALIMPORT int    __cdecl memcmp(const void *, const void *, size_t);
-PALIMPORT void * __cdecl memset(void *, int, size_t);
-PALIMPORT void * __cdecl memmove(void *, const void *, size_t);
-PALIMPORT void * __cdecl memchr(const void *, int, size_t);
-PALIMPORT long long int __cdecl atoll(const char *);
-PALIMPORT size_t __cdecl strlen(const char *);
-PALIMPORT int __cdecl strcmp(const char*, const char *);
-PALIMPORT int __cdecl strncmp(const char*, const char *, size_t);
-PALIMPORT int __cdecl _strnicmp(const char *, const char *, size_t);
-PALIMPORT char * __cdecl strcat(char *, const char *);
-PALIMPORT char * __cdecl strncat(char *, const char *, size_t);
-PALIMPORT char * __cdecl strcpy(char *, const char *);
-PALIMPORT char * __cdecl strncpy(char *, const char *, size_t);
-PALIMPORT char * __cdecl strchr(const char *, int);
-PALIMPORT char * __cdecl strrchr(const char *, int);
-PALIMPORT char * __cdecl strpbrk(const char *, const char *);
-PALIMPORT char * __cdecl strstr(const char *, const char *);
-PALIMPORT char * __cdecl strtok(char *, const char *);
-PALIMPORT size_t __cdecl strspn(const char *, const char *);
-PALIMPORT size_t  __cdecl strcspn(const char *, const char *);
-PALIMPORT int __cdecl atoi(const char *);
-PALIMPORT LONG __cdecl atol(const char *);
-PALIMPORT ULONG __cdecl strtoul(const char *, char **, int);
-PALIMPORT double __cdecl atof(const char *);
-PALIMPORT double __cdecl strtod(const char *, char **);
-PALIMPORT int __cdecl isprint(int);
-PALIMPORT int __cdecl isspace(int);
-PALIMPORT int __cdecl isalpha(int);
-PALIMPORT int __cdecl isalnum(int);
-PALIMPORT int __cdecl isdigit(int);
-PALIMPORT int __cdecl isxdigit(int);
-PALIMPORT int __cdecl isupper(int);
-PALIMPORT int __cdecl islower(int);
-PALIMPORT int __cdecl tolower(int);
-PALIMPORT int __cdecl toupper(int);
+// #define memcpy PAL_memcpy
+// #define IS_PAL_memcpy 1
+// #define TEST_PAL_DEFERRED(def) IS_##def
+// #define IS_REDEFINED_IN_PAL(def) TEST_PAL_DEFERRED(def)
+// #else //defined(_DEBUG)
+// PALIMPORT void * __cdecl memcpy(void *, const void *, size_t);
+// #endif //defined(_DEBUG)
+// PALIMPORT int    __cdecl memcmp(const void *, const void *, size_t);
+// PALIMPORT void * __cdecl memset(void *, int, size_t);
+// PALIMPORT void * __cdecl memmove(void *, const void *, size_t);
+// PALIMPORT void * __cdecl memchr(const void *, int, size_t);
+// PALIMPORT long long int __cdecl atoll(const char *);
+// PALIMPORT size_t __cdecl strlen(const char *);
+// PALIMPORT int __cdecl strcmp(const char*, const char *);
+// PALIMPORT int __cdecl strncmp(const char*, const char *, size_t);
+// PALIMPORT int __cdecl _strnicmp(const char *, const char *, size_t);
+// PALIMPORT char * __cdecl strcat(char *, const char *);
+// PALIMPORT char * __cdecl strncat(char *, const char *, size_t);
+// PALIMPORT char * __cdecl strcpy(char *, const char *);
+// PALIMPORT char * __cdecl strncpy(char *, const char *, size_t);
+// PALIMPORT char * __cdecl strchr(const char *, int);
+// PALIMPORT char * __cdecl strrchr(const char *, int);
+// PALIMPORT char * __cdecl strpbrk(const char *, const char *);
+// PALIMPORT char * __cdecl strstr(const char *, const char *);
+// PALIMPORT char * __cdecl strtok(char *, const char *);
+// PALIMPORT size_t __cdecl strspn(const char *, const char *);
+// PALIMPORT size_t  __cdecl strcspn(const char *, const char *);
+// PALIMPORT int __cdecl atoi(const char *);
+// PALIMPORT LONG __cdecl atol(const char *);
+// PALIMPORT ULONG __cdecl strtoul(const char *, char **, int);
+// PALIMPORT double __cdecl atof(const char *);
+// PALIMPORT double __cdecl strtod(const char *, char **);
+// PALIMPORT int __cdecl isprint(int);
+// PALIMPORT int __cdecl isspace(int);
+// PALIMPORT int __cdecl isalpha(int);
+// PALIMPORT int __cdecl isalnum(int);
+// PALIMPORT int __cdecl isdigit(int);
+// PALIMPORT int __cdecl isxdigit(int);
+// PALIMPORT int __cdecl isupper(int);
+// PALIMPORT int __cdecl islower(int);
+// PALIMPORT int __cdecl tolower(int);
+// PALIMPORT int __cdecl toupper(int);
 
+#endif // debug
 #endif // PAL_STDCPP_COMPAT
 
 /* _TRUNCATE */
@@ -4393,7 +4399,7 @@ unsigned int __cdecl _rotr(unsigned int value, int shift)
 
 PALIMPORT int __cdecl abs(int);
 #ifndef PAL_STDCPP_COMPAT
-PALIMPORT LONG __cdecl labs(LONG);
+//PALIMPORT LONG __cdecl labs(LONG);
 #endif // !PAL_STDCPP_COMPAT
 // clang complains if this is declared with __int64
 PALIMPORT long long __cdecl llabs(long long);
@@ -4466,10 +4472,10 @@ inline __int64 abs(__int64 _X) {
 }
 #endif
 
-PALIMPORT void * __cdecl malloc(size_t);
-PALIMPORT void   __cdecl free(void *);
-PALIMPORT void * __cdecl realloc(void *, size_t);
-PALIMPORT char * __cdecl _strdup(const char *);
+// PALIMPORT void * __cdecl malloc(size_t);
+// PALIMPORT void   __cdecl free(void *);
+// PALIMPORT void * __cdecl realloc(void *, size_t);
+// PALIMPORT char * __cdecl _strdup(const char *);
 
 #if defined(_MSC_VER)
 #define alloca _alloca
@@ -4525,7 +4531,7 @@ typedef struct _PAL_FILE PAL_FILE;
 #else // PAL_STDCPP_COMPAT
 
 struct _FILE;
-typedef struct _FILE FILE;
+//typedef struct _FILE FILE;
 typedef struct _FILE PAL_FILE;
 
 #define SEEK_SET    0

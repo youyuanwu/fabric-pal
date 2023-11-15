@@ -5,12 +5,12 @@
 
 #include "lmapibuf.h"
 
-NET_API_STATUS NET_API_FUNCTION
-NetApiBufferFree (
-    IN LPVOID Buffer
-    )
-{
-    delete[] Buffer;
-    return 0;
-}
+// NET_API_STATUS NET_API_FUNCTION
+// NetApiBufferFree (
+//     IN LPVOID Buffer
+//     )
+// {
+//     delete[] Buffer;
+//     return 0;
+// }
 
