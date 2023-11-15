@@ -4,4 +4,4 @@ project(fabric-pal LANGUAGES C CXX)
 
 # requires gcc10+
 
-add_subdirectory(src/pal)
+add_subdirectory(src/pal2)
