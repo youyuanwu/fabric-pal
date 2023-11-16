@@ -82,6 +82,13 @@ HRESULT GetErrorInfo(
   return S_FALSE;
 }
 
+HRESULT SetErrorInfo(
+  IN           ULONG      dwReserved,
+  OUT OPTIONAL void *perrinfo //IErrorInfo
+){
+  return S_OK;
+}
+
 HANDLE LoadLibraryA(
   IN LPCSTR lpLibFileName
 ){

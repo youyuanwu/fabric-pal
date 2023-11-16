@@ -100,6 +100,11 @@ HRESULT GetErrorInfo(
   OUT void **pperrinfo //IErrorInfo
 );
 
+HRESULT SetErrorInfo(
+  IN           ULONG      dwReserved,
+  OUT OPTIONAL void *perrinfo //IErrorInfo
+);
+
 HANDLE LoadLibraryA(
   IN LPCSTR lpLibFileName
 );
